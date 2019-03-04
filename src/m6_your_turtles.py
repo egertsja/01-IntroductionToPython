@@ -2,15 +2,15 @@
 Your chance to explore Loops and Turtles!
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
-         Aaron Wilkin, their colleagues, and PUT_YOUR_NAME_HERE.
+         Aaron Wilkin, their colleagues, and Jonah Egertson.
 """
 ########################################################################
-# TODO: 1.
+# DONE: 1.
 #   On Line 5 above, replace  PUT_YOUR_NAME_HERE  with your own name.
 ########################################################################
 
 ########################################################################
-# TODO: 2.
+# DONE: 2.
 #   You should have RUN the  m5e_loopy_turtles  module and READ its code.
 #   (Do so now if you have not already done so.)
 #
@@ -28,3 +28,44 @@ Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
 #   Don't forget to COMMIT-and-PUSH when you are done with this module.
 #
 ########################################################################
+
+
+import rosegraphics as rg
+
+window = rg.TurtleWindow()
+
+
+smoke = rg.SimpleTurtle()
+smoke.pen = rg.Pen('gray',15)
+
+angle = 75
+i = 16
+
+for k in range(i):
+    smoke.left(angle)
+    smoke.forward(35)
+    angle=angle/(i/(1-i))
+
+mtn = rg.SimpleTurtle()
+mtn.pen = rg.Pen('brown',15)
+
+mtn.right(135)
+
+for k in range(i):
+    mtn.forward(30)
+    mtn.left(45/(i/8-i))
+
+
+mtn2 = rg.SimpleTurtle()
+mtn2.pen = rg.Pen('brown',15)
+
+mtn2.right(45)
+
+for k in range(i):
+    mtn2.forward(30)
+    mtn2.right(45/(i/8-i))
+
+mtn2.left(173.6)
+mtn2.forward(880)
+
+window.close_on_mouse_click()
